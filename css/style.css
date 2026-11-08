@@ -744,20 +744,23 @@ html:not(.js) .reveal {
   font-size: clamp(4.2rem, 11.7vw, 10.8rem);
   font-weight: 600;
   letter-spacing: -0.045em;
-  line-height: 0.78;
+  line-height: 0.9;
   text-wrap: balance;
 }
 
 .hero__line {
   display: block;
-  overflow: hidden;
-  padding-bottom: 0.16em;
-  margin-bottom: -0.16em;
 }
 
 .hero__line > span {
   display: block;
-  transform: translateY(122%);
+  opacity: 0;
+  transform: translateY(0.22em);
+}
+
+html:not(.js) .hero__line > span {
+  opacity: 1;
+  transform: none;
 }
 
 body.is-loaded .hero__line > span {
@@ -2370,12 +2373,12 @@ html.js .portrait.is-visible .portrait__frame {
 
 .interlude h2 {
   margin: 0 0 26px;
-  padding-bottom: 0.04em;
+  padding-bottom: 0.22em;
   font-family: var(--serif);
   font-size: clamp(3.1rem, 7vw, 7rem);
   font-weight: 600;
   letter-spacing: -0.04em;
-  line-height: 1;
+  line-height: 1.04;
   text-wrap: balance;
 }
 
@@ -2715,13 +2718,16 @@ html.js .portrait.is-visible .portrait__frame {
   gap: 4px;
   color: var(--gold);
   font-family: var(--serif);
-  line-height: 0.72;
+  line-height: 1;
 }
 
 .legacy__year span {
+  display: block;
+  padding-bottom: 0.1em;
   font-size: clamp(7.5rem, 18vw, 16rem);
   font-weight: 500;
   letter-spacing: -0.065em;
+  line-height: 1.12;
   background: linear-gradient(180deg, var(--gold-soft), #a47b34);
   -webkit-background-clip: text;
   background-clip: text;
@@ -2874,13 +2880,13 @@ html.js .portrait.is-visible .portrait__frame {
 
 .final__title {
   margin: 0 0 30px;
-  padding-bottom: 0.04em;
+  padding-bottom: 0.22em;
   color: var(--bone);
   font-family: var(--serif);
   font-size: clamp(3.8rem, 9vw, 8.8rem);
   font-weight: 600;
   letter-spacing: -0.045em;
-  line-height: 1;
+  line-height: 1.05;
 }
 
 .final__title em {
@@ -2925,12 +2931,12 @@ html.js .portrait.is-visible .portrait__frame {
 
 .final__thanks {
   margin: clamp(48px, 8vh, 90px) 0 0;
-  padding-bottom: 0.04em;
+  padding-bottom: 0.12em;
   color: var(--gold);
   font-family: var(--serif);
   font-size: clamp(2.4rem, 4vw, 3.6rem);
   font-style: italic;
-  line-height: 1.08;
+  line-height: 1.12;
 }
 
 .final__thanks span {
@@ -3043,9 +3049,11 @@ kbd {
 /* ---------- 17. Keyframes ---------- */
 @keyframes line-up {
   from {
-    transform: translateY(122%);
+    opacity: 0;
+    transform: translateY(0.22em);
   }
   to {
+    opacity: 1;
     transform: translateY(0);
   }
 }
