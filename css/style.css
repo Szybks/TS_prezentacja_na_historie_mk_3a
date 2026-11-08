@@ -2723,15 +2723,12 @@ html.js .portrait.is-visible .portrait__frame {
 
 .legacy__year span {
   display: block;
-  padding-bottom: 0.1em;
+  padding-bottom: 0.14em;
   font-size: clamp(7.5rem, 18vw, 16rem);
   font-weight: 500;
   letter-spacing: -0.065em;
   line-height: 1.12;
-  background: linear-gradient(180deg, var(--gold-soft), #a47b34);
-  -webkit-background-clip: text;
-  background-clip: text;
-  color: transparent;
+  color: var(--gold-soft);
 }
 
 .legacy__year small {
