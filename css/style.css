@@ -531,7 +531,7 @@ section[id] {
   font-size: clamp(2.8rem, 6.2vw, 5.7rem);
   font-weight: 600;
   letter-spacing: -0.028em;
-  line-height: 0.92;
+  line-height: 1;
 }
 
 .section-head .lead {
@@ -2057,12 +2057,13 @@ html.js .portrait.is-visible .portrait__frame {
 
 .party__title {
   margin: 0 0 20px;
+  padding-bottom: 0.04em;
   color: var(--bone);
   font-family: var(--serif);
   font-size: clamp(2.8rem, 5.6vw, 5.4rem);
   font-weight: 600;
   letter-spacing: -0.035em;
-  line-height: 0.9;
+  line-height: 1.1;
   text-wrap: balance;
 }
 
@@ -2366,11 +2367,12 @@ html.js .portrait.is-visible .portrait__frame {
 
 .interlude h2 {
   margin: 0 0 26px;
+  padding-bottom: 0.04em;
   font-family: var(--serif);
   font-size: clamp(3.1rem, 7vw, 7rem);
   font-weight: 600;
   letter-spacing: -0.04em;
-  line-height: 0.86;
+  line-height: 1;
   text-wrap: balance;
 }
 
@@ -2735,12 +2737,13 @@ html.js .portrait.is-visible .portrait__frame {
 .legacy__intro h2 {
   max-width: 16ch;
   margin: 0 0 20px;
+  padding-bottom: 0.04em;
   color: var(--bone);
   font-family: var(--serif);
   font-size: clamp(2.6rem, 5.4vw, 5.3rem);
   font-weight: 600;
   letter-spacing: -0.035em;
-  line-height: 0.92;
+  line-height: 1;
 }
 
 .legacy__intro .lead {
@@ -2868,12 +2871,13 @@ html.js .portrait.is-visible .portrait__frame {
 
 .final__title {
   margin: 0 0 30px;
+  padding-bottom: 0.04em;
   color: var(--bone);
   font-family: var(--serif);
   font-size: clamp(3.8rem, 9vw, 8.8rem);
   font-weight: 600;
   letter-spacing: -0.045em;
-  line-height: 0.82;
+  line-height: 1;
 }
 
 .final__title em {
@@ -2918,11 +2922,12 @@ html.js .portrait.is-visible .portrait__frame {
 
 .final__thanks {
   margin: clamp(48px, 8vh, 90px) 0 0;
+  padding-bottom: 0.04em;
   color: var(--gold);
   font-family: var(--serif);
   font-size: clamp(2.4rem, 4vw, 3.6rem);
   font-style: italic;
-  line-height: 1;
+  line-height: 1.08;
 }
 
 .final__thanks span {
