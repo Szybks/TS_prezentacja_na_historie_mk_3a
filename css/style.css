@@ -1042,7 +1042,7 @@ body.is-loaded .hero__line:nth-child(3) > span {
   font-size: clamp(2rem, 3.5vw, 3.3rem);
   font-weight: 500;
   letter-spacing: -0.025em;
-  line-height: 1.04;
+  line-height: 1.08;
 }
 
 .statement em {
@@ -1206,7 +1206,7 @@ html.js .city-photo.is-visible .city-photo__frame {
   font-size: clamp(1.55rem, 2.2vw, 2rem);
   font-weight: 600;
   letter-spacing: -0.015em;
-  line-height: 1.05;
+  line-height: 1.1;
 }
 
 .zabor__places {
@@ -1396,7 +1396,7 @@ html.js .city-photo.is-visible .city-photo__frame {
   font-size: clamp(2.1rem, 3.2vw, 3.2rem);
   font-weight: 600;
   letter-spacing: -0.025em;
-  line-height: 0.95;
+  line-height: 1.05;
 }
 
 .current__idea {
@@ -1611,7 +1611,7 @@ html.js .city-photo.is-visible .city-photo__frame {
   font-size: clamp(1.65rem, 2.4vw, 2.1rem);
   font-weight: 600;
   letter-spacing: -0.02em;
-  line-height: 1.02;
+  line-height: 1.08;
 }
 
 .region > p {
@@ -1814,7 +1814,7 @@ html.js .city-photo.is-visible .city-photo__frame {
   font-size: clamp(1.45rem, 2vw, 1.85rem);
   font-weight: 600;
   letter-spacing: -0.015em;
-  line-height: 1.05;
+  line-height: 1.1;
 }
 
 .tl-body p {
@@ -2484,7 +2484,7 @@ html.js .portrait.is-visible .portrait__frame {
   font-size: clamp(1.7rem, 2.5vw, 2.25rem);
   font-weight: 600;
   letter-spacing: -0.02em;
-  line-height: 1;
+  line-height: 1.05;
 }
 
 .minor-card__sub {
@@ -2667,7 +2667,7 @@ html.js .portrait.is-visible .portrait__frame {
   font-family: var(--serif);
   font-size: 1.4rem;
   font-weight: 600;
-  line-height: 1.05;
+  line-height: 1.1;
 }
 
 .takeaways p {
@@ -2789,7 +2789,7 @@ html.js .portrait.is-visible .portrait__frame {
   font-family: var(--serif);
   font-size: 1.35rem;
   font-weight: 600;
-  line-height: 1.05;
+  line-height: 1.12;
 }
 
 .milestones p {
