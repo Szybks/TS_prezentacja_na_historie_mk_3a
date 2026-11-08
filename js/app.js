@@ -12,9 +12,10 @@
   const body = doc.body;
   const root = doc.documentElement;
   const params = new URLSearchParams(window.location.search);
-  const forceMotion = params.get("anim") === "1";
+  const forceMotion = params.get("anim") !== "0";
 
   if (forceMotion) root.classList.add("force-motion");
+  else root.classList.remove("force-motion");
 
   const reduceMotion =
     !forceMotion && window.matchMedia("(prefers-reduced-motion: reduce)").matches;

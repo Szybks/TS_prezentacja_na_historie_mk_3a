@@ -8,7 +8,7 @@ Jednostronicowa prezentacja historyczna w HTML, CSS i JavaScript. Zawiera autosc
 
 **Repozytorium:** [github.com/Szybks/TS_prezentacja_na_historie_mk_3a](https://github.com/Szybks/TS_prezentacja_na_historie_mk_3a)
 
-**Wersja z wymuszonymi animacjami:** [szybks.github.io/TS_prezentacja_na_historie_mk_3a/?anim=1](https://szybks.github.io/TS_prezentacja_na_historie_mk_3a/?anim=1)
+**Tryb respektujący systemowe ograniczenie animacji:** [szybks.github.io/TS_prezentacja_na_historie_mk_3a/?anim=0](https://szybks.github.io/TS_prezentacja_na_historie_mk_3a/?anim=0)
 
 ---
 
@@ -77,7 +77,8 @@ Repozytorium jest już opublikowane i podłączone do GitHub Pages:
 
 - **Repo:** https://github.com/Szybks/TS_prezentacja_na_historie_mk_3a
 - **Strona:** https://szybks.github.io/TS_prezentacja_na_historie_mk_3a/
-- **Animacje wymuszone:** https://szybks.github.io/TS_prezentacja_na_historie_mk_3a/?anim=1
+- **Animacje:** domyślnie włączone na stronie głównej
+- **Tryb ograniczony:** https://szybks.github.io/TS_prezentacja_na_historie_mk_3a/?anim=0
 - **Gałąź:** `main`, folder `/ (root)`
 
 ### Aktualizacja strony
@@ -143,21 +144,21 @@ W `css/style.css` w bloku `:root` znajdują się główne kolory. Barwy poszczeg
 
 ### Animacje a ustawienia systemowe
 
-Prezentacja respektuje systemową opcję **„ogranicz animacje”** / `prefers-reduced-motion`. Autoscroll działa niezależnie od tego ustawienia.
+Animacje są **domyślnie włączone**, także na GitHub Pages i nawet jeśli system ma włączone „ogranicz animacje”. To celowe: prezentacja ma być animowana.
 
-Jeśli chcesz zobaczyć pełne animacje mimo systemowego ograniczenia, otwórz wersję z parametrem:
+Jeśli chcesz uszanować systemowe ograniczenie animacji, otwórz:
 
 ```text
-index.html?anim=1
+index.html?anim=0
 ```
 
 lub, przez serwer:
 
 ```text
-http://localhost:8000/?anim=1
+http://localhost:8000/?anim=0
 ```
 
-**`uruchom.cmd` robi to automatycznie.** Parametr `?anim=1` dodaje klasę `force-motion`, która wyłącza blokadę animacji z systemu tylko dla tej prezentacji.
+Parametr `?anim=0` wyłącza klasę `force-motion`, a strona wraca do standardowego zachowania `prefers-reduced-motion`. Autoscroll działa niezależnie od tego ustawienia.
 
 ---
 

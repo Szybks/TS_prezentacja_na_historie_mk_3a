@@ -13,7 +13,12 @@
   <link rel="stylesheet" href="css/fonts.css">
   <link rel="stylesheet" href="css/style.css">
 
-  <script>document.documentElement.classList.add('js');</script>
+  <script>
+    document.documentElement.classList.add('js');
+    if (new URLSearchParams(window.location.search).get('anim') !== '0') {
+      document.documentElement.classList.add('force-motion');
+    }
+  </script>
 </head>
 <body>
   <a class="skip-link" href="#kontekst">Przejdź do treści</a>
