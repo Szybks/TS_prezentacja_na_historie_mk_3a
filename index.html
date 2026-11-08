@@ -1,0 +1,1383 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Nowe nurty polityczne — partie polityczne na ziemiach polskich 1890–1918. Prezentacja historyczna z autoscrollem i animacjami.">
+  <meta name="robots" content="noindex, nofollow">
+  <meta name="theme-color" content="#0e0d0b">
+  <title>Nowe nurty polityczne — partie na ziemiach polskich 1890–1918</title>
+
+  <link rel="preload" href="assets/img/mapa-rozbiory.svg" as="image">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' fill='%230e0d0b'/%3E%3Cpath d='M32 10 54 32 32 54 10 32Z' fill='%23c8a35a'/%3E%3C/svg%3E">
+  <link rel="stylesheet" href="css/fonts.css">
+  <link rel="stylesheet" href="css/style.css">
+
+  <script>document.documentElement.classList.add('js');</script>
+</head>
+<body>
+  <a class="skip-link" href="#kontekst">Przejdź do treści</a>
+
+  <div class="grain" aria-hidden="true"></div>
+  <div class="progress" aria-hidden="true"><div class="progress__bar" id="progressBar"></div></div>
+
+  <header class="topbar">
+    <a class="brand" href="#start" aria-label="Wróć na początek prezentacji">
+      <span class="brand__mark" aria-hidden="true"></span>
+      <span class="brand__text">
+        <span class="brand__title">Nowe nurty</span>
+        <span class="brand__sub" id="currentLabel">Wprowadzenie</span>
+      </span>
+    </a>
+
+    <div class="topbar__controls" aria-label="Sterowanie prezentacją">
+      <button class="auto-btn" id="autoBtn" type="button" aria-pressed="false" title="Autoscroll (A)">
+        <span class="auto-btn__icon" aria-hidden="true">
+          <svg class="icon-play" viewBox="0 0 16 16"><path d="M5 3.4v9.2L12 8 5 3.4Z" fill="currentColor"/></svg>
+          <svg class="icon-pause" viewBox="0 0 16 16"><path d="M4.5 3h2.4v10H4.5zM9.1 3h2.4v10H9.1z" fill="currentColor"/></svg>
+        </span>
+        <span class="auto-btn__label">Autoscroll</span>
+        <span class="auto-btn__state" id="autoState">wył.</span>
+      </button>
+
+      <button class="speed-btn" id="speedBtn" type="button" title="Zmień prędkość autoscrolla" aria-label="Prędkość autoscrolla: 1 razy">
+        1×
+      </button>
+
+      <button class="icon-btn" id="fullBtn" type="button" title="Pełny ekran (F)" aria-label="Pełny ekran">
+        <svg viewBox="0 0 20 20" aria-hidden="true">
+          <path d="M3 8V3h5M17 8V3h-5M3 12v5h5M17 12v5h-5" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/>
+        </svg>
+      </button>
+    </div>
+  </header>
+
+  <nav class="side-nav" aria-label="Spis sekcji">
+    <a href="#start" class="nav-dot" data-title="Start" aria-label="Start"><span>00</span></a>
+    <a href="#kontekst" class="nav-dot" data-title="Kontekst" aria-label="Kontekst"><span>01</span></a>
+    <a href="#nurty" class="nav-dot" data-title="Cztery nurty" aria-label="Cztery nurty"><span>02</span></a>
+    <a href="#geografia" class="nav-dot" data-title="Geografia" aria-label="Geografia polityczna"><span>03</span></a>
+    <a href="#kalendarium" class="nav-dot" data-title="Kalendarium" aria-label="Kalendarium"><span>04</span></a>
+    <a href="#pps" class="nav-dot" data-title="PPS" aria-label="PPS"><span>05</span></a>
+    <a href="#endecja" class="nav-dot" data-title="Endecja" aria-label="Endecja"><span>06</span></a>
+    <a href="#sdkpil" class="nav-dot" data-title="SDKPiL" aria-label="SDKPiL"><span>07</span></a>
+    <a href="#psl" class="nav-dot" data-title="PSL" aria-label="PSL"><span>08</span></a>
+    <a href="#spory" class="nav-dot" data-title="Spory" aria-label="Spory polityczne"><span>09</span></a>
+    <a href="#rok1905" class="nav-dot" data-title="1905" aria-label="Rok 1905"><span>10</span></a>
+    <a href="#poza" class="nav-dot" data-title="Poza nurtem" aria-label="Poza głównym nurtem"><span>11</span></a>
+    <a href="#bilans" class="nav-dot" data-title="Bilans" aria-label="Bilans partii"><span>12</span></a>
+    <a href="#dziedzictwo" class="nav-dot" data-title="1918" aria-label="Rok 1918"><span>13</span></a>
+    <a href="#final" class="nav-dot" data-title="Finał" aria-label="Finał"><span>14</span></a>
+  </nav>
+
+  <main>
+    <!-- ============================ HERO ============================ -->
+    <section id="start" class="hero" data-chapter="00" data-title="Wprowadzenie">
+      <div class="hero__map" aria-hidden="true"></div>
+      <div class="hero__shade" aria-hidden="true"></div>
+      <div class="hero__inner wrap">
+        <div class="hero__main">
+          <p class="hero__kicker">
+            <span class="kicker-dot" aria-hidden="true"></span>
+            Historia · ziemie polskie · 1890—1918
+          </p>
+
+          <h1 class="hero__title" aria-label="Nowe nurty polityczne">
+            <span class="hero__line"><span>Nowe</span></span>
+            <span class="hero__line"><span>nurty</span></span>
+            <span class="hero__line hero__line--accent"><span>polityczne</span></span>
+          </h1>
+
+          <p class="hero__sub">Partie polityczne na ziemiach polskich</p>
+          <p class="hero__lead">
+            Bez państwa, ale nie bez polityki. Pod koniec XIX wieku w trzech zaborach
+            rodzą się nowe idee, nowe partie i nowe odpowiedzi na pytanie:
+            <em>jaka ma być Polska?</em>
+          </p>
+
+          <div class="hero__actions">
+            <button class="btn btn--primary" id="heroAuto" type="button">
+              <span class="btn__icon" aria-hidden="true">
+                <svg viewBox="0 0 16 16"><path d="M5 3.4v9.2L12 8 5 3.4Z" fill="currentColor"/></svg>
+              </span>
+              <span class="hero-auto-label">Uruchom autoscroll</span>
+            </button>
+            <a class="btn btn--ghost" href="#kontekst">
+              Przewiń ręcznie
+              <span aria-hidden="true">↓</span>
+            </a>
+          </div>
+        </div>
+
+        <aside class="hero__aside">
+          <p class="mono-label">Teza</p>
+          <p class="hero__thesis">
+            Polityka nie czekała na niepodległość. Partie budowały Polskę
+            już pod zaborami — w prasie, w konspiracji, w parlamencie i na wiecach.
+          </p>
+
+          <div class="hero__facts" data-stagger>
+            <div class="fact"><strong>3</strong><span>zabory</span></div>
+            <div class="fact"><strong>4</strong><span>nurty</span></div>
+            <div class="fact"><strong>123</strong><span>lata bez państwa</span></div>
+          </div>
+
+          <p class="hero__index">00 <span>/</span> 14</p>
+        </aside>
+      </div>
+
+      <div class="hero__bottom">
+        <a class="scroll-cue" href="#kontekst">
+          <span class="scroll-cue__line" aria-hidden="true"><span></span></span>
+          <span>Przewiń, by zbudować opowieść</span>
+        </a>
+
+        <div class="ticker" aria-hidden="true">
+          <div class="ticker__track">
+            <span>PPS — 1892</span><span class="ticker__dot">◆</span>
+            <span>PSL — 1895</span><span class="ticker__dot">◆</span>
+            <span>Endecja — 1897</span><span class="ticker__dot">◆</span>
+            <span>SDKPiL — 1900</span><span class="ticker__dot">◆</span>
+            <span>Chadecja — 1896</span><span class="ticker__dot">◆</span>
+            <span>Bund — 1897</span><span class="ticker__dot">◆</span>
+            <span>PPS — 1892</span><span class="ticker__dot">◆</span>
+            <span>PSL — 1895</span><span class="ticker__dot">◆</span>
+            <span>Endecja — 1897</span><span class="ticker__dot">◆</span>
+            <span>SDKPiL — 1900</span><span class="ticker__dot">◆</span>
+            <span>Chadecja — 1896</span><span class="ticker__dot">◆</span>
+            <span>Bund — 1897</span><span class="ticker__dot">◆</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================ KONTEKST ============================ -->
+    <section id="kontekst" class="panel light" data-chapter="01" data-title="Kontekst">
+      <div class="wrap">
+        <header class="section-head">
+          <p class="eyebrow">01 · Punkt wyjścia</p>
+          <h2 class="reveal" data-split>Państwa nie ma. Polityka jest.</h2>
+          <p class="lead reveal">
+            Po rozbiorach Polska zniknęła z mapy, ale nie z życia społecznego.
+            Pod koniec XIX w. industrializacja, migracje do miast, prasa i edukacja
+            tworzą nowych uczestników polityki.
+          </p>
+        </header>
+
+        <div class="context-grid">
+          <div class="context-intro reveal">
+            <p class="statement">
+              Trzy zabory to <em>nie jedna historia</em>. To trzy różne systemy
+              prawne, gospodarcze i polityczne — i trzy różne możliwości działania.
+            </p>
+            <p>
+              W zaborze rosyjskim i pruskim polska polityka była ograniczana
+              i często nielegalna. W Galicji istniała autonomia: działały polskie
+              szkoły, urzędy i partie. Ta różnica wpłynęła na to, gdzie i jak
+              rodziły się nowe nurty.
+            </p>
+
+            <div class="stat-row" data-stagger>
+              <div class="stat">
+                <span class="stat__num" data-count="123">123</span>
+                <span class="stat__label">lata bez państwa</span>
+              </div>
+              <div class="stat">
+                <span class="stat__num" data-count="3">3</span>
+                <span class="stat__label">systemy zaborcze</span>
+              </div>
+              <div class="stat">
+                <span class="stat__num" data-count="4">4</span>
+                <span class="stat__label">nowe nurty</span>
+              </div>
+              <div class="stat">
+                <span class="stat__num" data-count="5">5</span>
+                <span class="stat__label">partii w centrum</span>
+              </div>
+            </div>
+          </div>
+
+          <figure class="city-photo reveal" data-reveal="fade">
+            <div class="city-photo__frame">
+              <img src="assets/img/warszawa-1900.jpg" alt="Barwna fotografia Warszawy z około 1900 roku: ulica, kościół i przechodnie">
+            </div>
+            <figcaption>
+              <span>Miasto epoki — Warszawa, ok. 1900</span>
+              <span>fot. barwna · Wikimedia Commons</span>
+            </figcaption>
+          </figure>
+        </div>
+
+        <div class="zabory" data-stagger>
+          <article class="zabor zabor--ru">
+            <div class="zabor__top">
+              <span class="zabor__code">R</span>
+              <span class="tag">zabór rosyjski</span>
+            </div>
+            <h3>Królestwo Polskie</h3>
+            <p class="zabor__places">Warszawa · Łódź · Zagłębie</p>
+            <p>
+              Największy ośrodek przemysłu, ale też rusyfikacja i represje po 1864 r.
+              Polska polityka działa w konspiracji; po rewolucji 1905 r. pojawiają się
+              prasa, związki i Duma.
+            </p>
+            <ul class="mini-list">
+              <li>rusyfikacja szkół i urzędów</li>
+              <li>silny ruch robotniczy</li>
+              <li>po 1905: jawna prasa i Duma</li>
+            </ul>
+          </article>
+
+          <article class="zabor zabor--pr">
+            <div class="zabor__top">
+              <span class="zabor__code">P</span>
+              <span class="tag">zabór pruski</span>
+            </div>
+            <h3>Wielkopolska, Pomorze, Śląsk</h3>
+            <p class="zabor__places">Poznań · Gdańsk · Katowice</p>
+            <p>
+              Germanizacja, Kulturkampf i rugi pruskie. Polacy działają legalnie,
+              ale w niemieckich ramach: przez spółdzielnie, banki, prasę
+              i organizacje katolickie.
+            </p>
+            <ul class="mini-list">
+              <li>obrona polskości w gospodarce</li>
+              <li>Kościół i katolicka mobilizacja</li>
+              <li>praca organiczna i spółdzielczość</li>
+            </ul>
+          </article>
+
+          <article class="zabor zabor--au">
+            <div class="zabor__top">
+              <span class="zabor__code">A</span>
+              <span class="tag">zabór austriacki</span>
+            </div>
+            <h3>Galicja</h3>
+            <p class="zabor__places">Kraków · Lwów · Rzeszów</p>
+            <p>
+              Autonomia od 1867 r. oznacza polski język w szkołach i urzędach.
+              Partie mogą działać legalnie, ale Galicja zmaga się z biedą
+              i emigracją.
+            </p>
+            <ul class="mini-list">
+              <li>największa swoboda polityczna</li>
+              <li>legalne partie i prasa</li>
+              <li>bieda, emigracja, elita konserwatywna</li>
+            </ul>
+          </article>
+        </div>
+
+        <p class="fine-note reveal">
+          Uproszczenie: granice i warunki zmieniały się, a autonomia Galicji
+          nie oznaczała niepodległości. To jednak różnice między zaborami
+          najlepiej tłumaczą, dlaczego partie działały tak różnie.
+        </p>
+
+        <div class="new-actors reveal">
+          <p class="mono-label">Nowi aktorzy polityki</p>
+          <ul class="actor-tags">
+            <li>robotnicy</li>
+            <li>chłopi</li>
+            <li>inteligencja</li>
+            <li>mieszczaństwo</li>
+            <li>kobiety</li>
+          </ul>
+          <p>
+            Polityka przestaje być rozmową elit. Potrzebuje wieców, gazet,
+            kółek, programów — i coraz częściej masowego odbiorcy.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================ NURTY ============================ -->
+    <section id="nurty" class="panel dark" data-chapter="02" data-title="Cztery nurty">
+      <div class="wrap">
+        <header class="section-head section-head--wide">
+          <p class="eyebrow">02 · Idee</p>
+          <h2 class="reveal" data-split>Cztery odpowiedzi na jedno pytanie</h2>
+          <p class="lead reveal">
+            Wszystkie nurty chciały dobra Polski. Różniły się tym, kto ma być
+            podmiotem polityki, jak przebudować społeczeństwo i jaką cenę
+            zapłacić za wolność.
+          </p>
+        </header>
+
+        <div class="currents" data-stagger>
+          <article class="current current--red">
+            <div class="current__head">
+              <span class="current__num">01</span>
+              <span class="current__icon" aria-hidden="true">
+                <svg viewBox="0 0 48 48">
+                  <circle cx="24" cy="24" r="7.5" fill="none" stroke="currentColor" stroke-width="1.4"/>
+                  <path d="M24 5.5v6M24 36.5v6M5.5 24h6M36.5 24h6M11 11l4.2 4.2M32.8 32.8l4.2 4.2M37 11l-4.2 4.2M15.2 32.8 11 37" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/>
+                </svg>
+              </span>
+            </div>
+            <h3>Socjalizm</h3>
+            <p class="current__idea">Wolność przez przebudowę społeczną.</p>
+            <p>
+              Kapitalizm rodzi nierówność. Robotnik potrzebuje praw, godziwej płacy
+              i wpływu na państwo. Socjaliści chcą sprawiedliwości — jedni łączą ją
+              z niepodległością, inni z rewolucją międzynarodową.
+            </p>
+            <ul class="current__tags">
+              <li>klasa</li><li>równość</li><li>prawa pracy</li><li>rewolucja / reformy</li>
+            </ul>
+            <p class="current__parties">PPS · SDKPiL · PPSD</p>
+          </article>
+
+          <article class="current current--blue">
+            <div class="current__head">
+              <span class="current__num">02</span>
+              <span class="current__icon" aria-hidden="true">
+                <svg viewBox="0 0 48 48">
+                  <path d="M14 7v35M14 10h23l-4.4 8.5L37 27H14" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linejoin="round"/>
+                  <path d="M9 42h12" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/>
+                </svg>
+              </span>
+            </div>
+            <h3>Nacjonalizm</h3>
+            <p class="current__idea">Naród jako wspólnota losu.</p>
+            <p>
+              Polacy są wspólnotą, która musi przetrwać presję zaborców. Trzeba
+              budować nowoczesny naród: edukację, gospodarkę, prasę i solidarność
+              ponad klasami. W wersji endecji oznaczało to także wykluczenie
+              mniejszości i antysemityzm.
+            </p>
+            <ul class="current__tags">
+              <li>naród</li><li>solidaryzm</li><li>nowoczesność</li><li>wykluczenie</li>
+            </ul>
+            <p class="current__parties">SND / endecja</p>
+          </article>
+
+          <article class="current current--green">
+            <div class="current__head">
+              <span class="current__num">03</span>
+              <span class="current__icon" aria-hidden="true">
+                <svg viewBox="0 0 48 48">
+                  <path d="M24 41V10M24 19c-6.5 0-9-4.5-9-9 5.5 0 9 3.5 9 9Zm0 9c-6.5 0-9-4.5-9-9 5.5 0 9 3.5 9 9Zm0 9c-6.5 0-9-4.5-9-9 5.5 0 9 3.5 9 9Zm0-18c6.5 0 9-4.5 9-9-5.5 0-9 3.5-9 9Zm0 9c6.5 0 9-4.5 9-9-5.5 0-9 3.5-9 9Zm0 9c6.5 0 9-4.5 9-9-5.5 0-9 3.5-9 9Z" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linejoin="round"/>
+                </svg>
+              </span>
+            </div>
+            <h3>Ludowstwo</h3>
+            <p class="current__idea">Głos chłopa.</p>
+            <p>
+              Większość społeczeństwa mieszka na wsi, ale nie ma prawdziwej
+              reprezentacji. Ludowcy chcą ziemi, oświaty, samorządu i godności
+              chłopa. To nie tylko program gospodarczy — to walka o podmiotowość.
+            </p>
+            <ul class="current__tags">
+              <li>ziemia</li><li>oświata</li><li>samorząd</li><li>spółdzielczość</li>
+            </ul>
+            <p class="current__parties">PSL</p>
+          </article>
+
+          <article class="current current--violet">
+            <div class="current__head">
+              <span class="current__num">04</span>
+              <span class="current__icon" aria-hidden="true">
+                <svg viewBox="0 0 48 48">
+                  <circle cx="24" cy="24" r="16" fill="none" stroke="currentColor" stroke-width="1.4"/>
+                  <path d="M24 11v26M15.5 19.5h17" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/>
+                </svg>
+              </span>
+            </div>
+            <h3>Chrześcijańska demokracja</h3>
+            <p class="current__idea">Ewangelia i kwestia społeczna.</p>
+            <p>
+              Kościół nie może być obojętny wobec nędzy robotników. Chadecja szuka
+              trzeciej drogi między kapitalizmem a socjalizmem: solidaryzmu, rodziny,
+              własności i odpowiedzialności. Impulsem była encyklika Leona XIII
+              <em>Rerum Novarum</em> (1891).
+            </p>
+            <ul class="current__tags">
+              <li>solidaryzm</li><li>rodzina</li><li>własność</li><li>nauka społeczna Kościoła</li>
+            </ul>
+            <p class="current__parties">Stronnictwo Chrześcijańsko-Ludowe · chadecja</p>
+          </article>
+        </div>
+
+        <div class="idea-strip reveal">
+          <p class="mono-label">Wspólny mianownik</p>
+          <p>
+            Wszystkie nurty chciały <em>więcej praw</em> i <em>silniejszej wspólnoty</em>.
+            Spierały się o to, kto ma być podmiotem polityki: klasa, naród,
+            wieś czy chrześcijanin-obywatel.
+          </p>
+        </div>
+
+        <aside class="old-currents reveal">
+          <span class="old-currents__label">Nie wszystko nowe</span>
+          <p>
+            Konserwatyści i liberałowie nie zniknęli. W Galicji konserwatywni
+            stańczycy mieli realny wpływ; realiści stawiali na legalną pracę
+            i ugodę. Nowe nurty nie zastąpiły starych — weszły z nimi w spór.
+          </p>
+        </aside>
+      </div>
+    </section>
+
+    <!-- ============================ GEOGRAFIA ============================ -->
+    <section id="geografia" class="panel geo" data-chapter="03" data-title="Geografia">
+      <div class="geo__map" aria-hidden="true"></div>
+      <div class="wrap">
+        <header class="section-head section-head--wide">
+          <p class="eyebrow">03 · Geografia polityczna</p>
+          <h2 class="reveal" data-split>Ta sama sprawa, trzy różne sceny</h2>
+          <p class="lead reveal">
+            Możliwość działania zależała od zaboru. Ta sama partia mogła być
+            nielegalna w Warszawie, a legalna we Lwowie. Geografia polityczna
+            nie była tłem — była warunkiem gry.
+          </p>
+        </header>
+
+        <div class="regions" data-stagger>
+          <article class="region region--ru">
+            <div class="region__top">
+              <span class="region__code">R</span>
+              <span class="tag">Rosja</span>
+            </div>
+            <h3>Konspiracja i przemysł</h3>
+            <p>
+              PPS, SDKPiL i endecja działają w konspiracji; po 1905 r. pojawiają
+              się legalna prasa, związki i Duma. Najsilniejsze ośrodki:
+              Warszawa, Łódź, Zagłębie.
+            </p>
+            <div class="region__row">
+              <span>Partie</span>
+              <p>PPS · SDKPiL · SND · PSL Wyzwolenie</p>
+            </div>
+            <div class="region__row">
+              <span>Klimat</span>
+              <p>represje, rusyfikacja, strajk i bomba</p>
+            </div>
+          </article>
+
+          <article class="region region--pr">
+            <div class="region__top">
+              <span class="region__code">P</span>
+              <span class="tag">Niemcy</span>
+            </div>
+            <h3>Legalnie, ale po niemiecku</h3>
+            <p>
+              Polityka narodowa w niemieckich ramach: spółdzielnie, banki, prasa,
+              organizacje katolickie. Silna endecja i ruch katolicki; mniejsza
+              przestrzeń dla socjalistów.
+            </p>
+            <div class="region__row">
+              <span>Partie</span>
+              <p>endecja · chadecja · organizacje katolickie</p>
+            </div>
+            <div class="region__row">
+              <span>Klimat</span>
+              <p>germanizacja, praca organiczna, spółdzielczość</p>
+            </div>
+          </article>
+
+          <article class="region region--au">
+            <div class="region__top">
+              <span class="region__code">A</span>
+              <span class="tag">Austro-Węgry</span>
+            </div>
+            <h3>Autonomia i parlament</h3>
+            <p>
+              Galicja ma polskie szkoły, urzędy i sejm krajowy. Legalnie działają
+              PSL, PPSD, endecja i konserwatyści. To tu rodzi się masowa
+              polityka chłopska.
+            </p>
+            <div class="region__row">
+              <span>Partie</span>
+              <p>PSL · PPSD · SND · konserwatyści</p>
+            </div>
+            <div class="region__row">
+              <span>Klimat</span>
+              <p>wolność, bieda, emigracja, walka o głos chłopa</p>
+            </div>
+          </article>
+        </div>
+
+        <div class="geo-foot">
+          <p class="fine-note reveal">
+            PPSD = Polska Partia Socjalno-Demokratyczna Galicji i Śląska Cieszyńskiego
+            (1892). Działała legalnie i była zapleczem Ignacego Daszyńskiego.
+          </p>
+          <p class="fun-fact reveal">
+            <span>Trójkąt Trzech Cesarzy</span>
+            Do 1915 r. w pobliżu Mysłowic stykały się granice Rosji, Prus i Austrii.
+            Jeden punkt, trzy światy polityczne.
+          </p>
+        </div>
+
+        <p class="map-credit">
+          Tło: schemat Rzeczypospolitej po rozbiorach (1772–1795), Halibutt / ElCet,
+          Wikimedia Commons, GFDL / CC BY-SA. Mapa ma charakter poglądowy.
+        </p>
+      </div>
+    </section>
+
+    <!-- ============================ KALENDARIUM ============================ -->
+    <section id="kalendarium" class="panel light" data-chapter="04" data-title="Kalendarium">
+      <div class="wrap">
+        <header class="section-head">
+          <p class="eyebrow">04 · Kalendarium</p>
+          <h2 class="reveal" data-split>Od kółka do masowej partii</h2>
+          <p class="lead reveal">
+            Nowe nurty nie powstały w jednej chwili. Krystalizowały się pod presją
+            industrializacji, represji, rewolucji i wojny. Oto punkty zwrotne.
+          </p>
+        </header>
+
+        <div class="timeline-legend reveal" aria-label="Legenda kolorów">
+          <span><i style="--dot: var(--red)"></i>socjalizm</span>
+          <span><i style="--dot: var(--blue)"></i>nacjonalizm</span>
+          <span><i style="--dot: var(--green)"></i>ludowstwo</span>
+          <span><i style="--dot: var(--violet)"></i>chadecja</span>
+          <span><i style="--dot: var(--gold)"></i>kontekst</span>
+        </div>
+
+        <div class="timeline" id="timeline">
+          <div class="timeline__line" aria-hidden="true"></div>
+          <div class="timeline__fill" id="timelineFill" aria-hidden="true"></div>
+
+          <article class="tl-item" style="--dot: var(--red)">
+            <div class="tl-body">
+              <span class="tl-tag">socjalizm</span>
+              <h3>Wielki Proletariat</h3>
+              <p>Pierwsza polska partia robotnicza. Konspiracja, internacjonalizm i pierwsze doświadczenia ruchu masowego.</p>
+            </div>
+            <div class="tl-year"><span class="tl-dot"></span>1882</div>
+          </article>
+
+          <article class="tl-item" style="--dot: var(--red)">
+            <div class="tl-body">
+              <span class="tl-tag">socjalizm</span>
+              <h3>PPS i PPSD</h3>
+              <p>PPS powstaje w Paryżu, PPSD we Lwowie. Dwie drogi: konspiracja w Królestwie i legalna polityka w Galicji.</p>
+            </div>
+            <div class="tl-year"><span class="tl-dot"></span>1892</div>
+          </article>
+
+          <article class="tl-item" style="--dot: var(--blue)">
+            <div class="tl-body">
+              <span class="tl-tag">nacjonalizm / socjalizm</span>
+              <h3>SDKP i Liga Narodowa</h3>
+              <p>Marksizm bez niepodległości i nowoczesny nacjonalizm. Dwie odpowiedzi na to samo wyzwanie: masy i naród.</p>
+            </div>
+            <div class="tl-year"><span class="tl-dot"></span>1893</div>
+          </article>
+
+          <article class="tl-item" style="--dot: var(--green)">
+            <div class="tl-body">
+              <span class="tl-tag">ludowstwo</span>
+              <h3>PSL w Rzeszowie</h3>
+              <p>Chłopi wchodzą do polityki. Powstaje legalna, masowa partia ludowa w Galicji.</p>
+            </div>
+            <div class="tl-year"><span class="tl-dot"></span>1895</div>
+          </article>
+
+          <article class="tl-item" style="--dot: var(--violet)">
+            <div class="tl-body">
+              <span class="tl-tag">chadecja</span>
+              <h3>Chadecja w Galicji</h3>
+              <p>Stronnictwo Chrześcijańsko-Ludowe ks. Stanisława Stojałowskiego. Solidaryzm, religia i prawa ludu.</p>
+            </div>
+            <div class="tl-year"><span class="tl-dot"></span>1896</div>
+          </article>
+
+          <article class="tl-item" style="--dot: var(--blue)">
+            <div class="tl-body">
+              <span class="tl-tag">nacjonalizm / socjalizm</span>
+              <h3>SND i Bund</h3>
+              <p>Powstaje Stronnictwo Narodowo-Demokratyczne. W Wilnie rodzi się Bund — socjalistyczny ruch robotników żydowskich.</p>
+            </div>
+            <div class="tl-year"><span class="tl-dot"></span>1897</div>
+          </article>
+
+          <article class="tl-item" style="--dot: var(--red)">
+            <div class="tl-body">
+              <span class="tl-tag">socjalizm</span>
+              <h3>SDKPiL</h3>
+              <p>SDKP rozszerza działalność na Litwę i zmienia nazwę. Róża Luksemburg i Leo Jogiches budują marksistowską partię.</p>
+            </div>
+            <div class="tl-year"><span class="tl-dot"></span>1900</div>
+          </article>
+
+          <article class="tl-item" style="--dot: var(--blue)">
+            <div class="tl-body">
+              <span class="tl-tag">nacjonalizm</span>
+              <h3>„Myśli nowoczesnego Polaka”</h3>
+              <p>Roman Dmowski formułuje program nowoczesnego nacjonalizmu: naród, praca, wychowanie i solidaryzm.</p>
+            </div>
+            <div class="tl-year"><span class="tl-dot"></span>1903</div>
+          </article>
+
+          <article class="tl-item tl-item--major" style="--dot: var(--gold)">
+            <div class="tl-body">
+              <span class="tl-tag">kontekst</span>
+              <h3>Rewolucja 1905</h3>
+              <p>Strajki, demonstracje i walki uliczne w Łodzi. Polityka wychodzi na ulice; pojawiają się prasa, związki i Duma.</p>
+            </div>
+            <div class="tl-year"><span class="tl-dot"></span>1905</div>
+          </article>
+
+          <article class="tl-item" style="--dot: var(--red)">
+            <div class="tl-body">
+              <span class="tl-tag">socjalizm</span>
+              <h3>Rozłam PPS</h3>
+              <p>Frakcja Rewolucyjna i PPS-Lewica. SDKPiL staje się autonomiczną sekcją SDPRR. Spór o taktykę staje się trwały.</p>
+            </div>
+            <div class="tl-year"><span class="tl-dot"></span>1906</div>
+          </article>
+
+          <article class="tl-item" style="--dot: var(--green)">
+            <div class="tl-body">
+              <span class="tl-tag">ludowstwo</span>
+              <h3>Rozłam PSL</h3>
+              <p>PSL Piast i PSL Lewica. Ruch ludowy jest już dojrzały — i podzielony. W 1915 r. w Królestwie powstaje PSL Wyzwolenie.</p>
+            </div>
+            <div class="tl-year"><span class="tl-dot"></span>1913</div>
+          </article>
+
+          <article class="tl-item tl-item--final" style="--dot: var(--gold)">
+            <div class="tl-body">
+              <span class="tl-tag">kontekst</span>
+              <h3>Niepodległość</h3>
+              <p>Partie wchodzą do państwa. PPS-Lewica i SDKPiL tworzą KPRP; PPS jednoczy się z PPSD. Spór przenosi się do Sejmu.</p>
+            </div>
+            <div class="tl-year"><span class="tl-dot"></span>1918</div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================ PPS ============================ -->
+    <section id="pps" class="party party--pps" data-chapter="05" data-title="PPS">
+      <div class="wrap party__grid">
+        <div class="party__visual">
+          <div class="portrait reveal" data-reveal="fade">
+            <div class="portrait__frame">
+              <img src="assets/img/pilsudski.jpg" alt="Portret Józefa Piłsudskiego z okresu działalności w PPS">
+              <span class="portrait__wash" aria-hidden="true"></span>
+            </div>
+            <div class="portrait__stamp" aria-hidden="true">1892</div>
+          </div>
+          <p class="portrait__caption">
+            <strong>Józef Piłsudski</strong>
+            działacz PPS, twórca Legionów, Naczelnik Państwa
+          </p>
+          <div class="portrait__secondary reveal" data-reveal="scale">
+            <img src="assets/img/daszynski.jpg" alt="Portret Ignacego Daszyńskiego">
+            <span>Ignacy Daszyński<br><small>PPSD · rząd lubelski 1918</small></span>
+          </div>
+          <p class="party__index">01 <span>/</span> 04</p>
+        </div>
+
+        <div class="party__content">
+          <p class="eyebrow">05 · Partia 01 / 04 · socjalizm</p>
+          <h2 class="party__title reveal">Polska Partia Socjalistyczna</h2>
+          <p class="party__lead reveal">
+            Niepodległość i sprawiedliwość społeczna w jednym programie.
+            PPS chciała wolnej Polski, w której robotnik nie jest tylko trybikiem.
+          </p>
+
+          <div class="meta-grid reveal" data-reveal="fade">
+            <div><span>Rok założenia</span><strong>1892, Paryż</strong></div>
+            <div><span>Baza</span><strong>robotnicy, inteligencja</strong></div>
+            <div><span>Kolor</span><strong>czerwień</strong></div>
+            <div><span>Hasło</span><strong>niepodległość i socjalizm</strong></div>
+          </div>
+
+          <div class="program reveal">
+            <h3>Program w trzech punktach</h3>
+            <ol>
+              <li><span>01</span><p>Niepodległa, demokratyczna republika — nie autonomia i nie ugoda z zaborcą.</p></li>
+              <li><span>02</span><p>Prawa pracy: 8-godzinny dzień, ubezpieczenia, wolne związki, równość praw.</p></li>
+              <li><span>03</span><p>Reformy społeczne i rolne. Polska ma być państwem obywateli, nie tylko elit.</p></li>
+            </ol>
+          </div>
+
+          <div class="idea-quote reveal">
+            <span class="idea-quote__label">Idea partii</span>
+            <p>Wolna Polska i sprawiedliwość społeczna — jedno bez drugiego nie wystarcza.</p>
+          </div>
+
+          <div class="shadow-note reveal">
+            <span>W cieniu</span>
+            <p>
+              Po 1905 r. PPS się dzieli. Frakcja Rewolucyjna Piłsudskiego stawia
+              na walkę o niepodległość, PPS-Lewica jest bliżej współpracy z SDKPiL.
+              W 1914 r. Piłsudski tworzy Legiony; w 1918 r. Daszyński staje na czele
+              rządu lubelskiego. W 1919 r. PPS jednoczy się z PPSD.
+            </p>
+          </div>
+
+          <div class="leaders reveal">
+            <span class="mono-label">Ludzie</span>
+            <ul class="chips">
+              <li>Józef Piłsudski</li>
+              <li>Ignacy Daszyński</li>
+              <li>Bolesław Limanowski</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================ ENDECJA ============================ -->
+    <section id="endecja" class="party party--nd" data-chapter="06" data-title="Endecja">
+      <div class="wrap party__grid">
+        <div class="party__visual">
+          <div class="portrait reveal" data-reveal="fade">
+            <div class="portrait__frame">
+              <img src="assets/img/dmowski.jpg" alt="Portret Romana Dmowskiego">
+              <span class="portrait__wash" aria-hidden="true"></span>
+            </div>
+            <div class="portrait__stamp" aria-hidden="true">1897</div>
+          </div>
+          <p class="portrait__caption">
+            <strong>Roman Dmowski</strong>
+            współtwórca Ligi Narodowej i SND, autor „Myśli nowoczesnego Polaka”
+          </p>
+          <p class="party__index">02 <span>/</span> 04</p>
+        </div>
+
+        <div class="party__content">
+          <p class="eyebrow">06 · Partia 02 / 04 · nacjonalizm</p>
+          <h2 class="party__title reveal">Narodowa Demokracja</h2>
+          <p class="party__lead reveal">
+            Naród jako wspólnota losu — ponad klasami i interesami. Endecja chciała
+            nowoczesnego, silnego społeczeństwa, ale definiowała je przez wykluczenie.
+          </p>
+
+          <div class="meta-grid reveal" data-reveal="fade">
+            <div><span>Rok</span><strong>1897 · SND</strong></div>
+            <div><span>Korzenie</span><strong>Liga Polska 1887 → Liga Narodowa 1893</strong></div>
+            <div><span>Baza</span><strong>mieszczaństwo, inteligencja, ziemiaństwo</strong></div>
+            <div><span>Kolor</span><strong>błękit</strong></div>
+          </div>
+
+          <div class="program reveal">
+            <h3>Program w trzech punktach</h3>
+            <ol>
+              <li><span>01</span><p>Nowoczesny naród: edukacja, prasa, gospodarka i kultura — nie tylko romantyczne powstania.</p></li>
+              <li><span>02</span><p>Solidaryzm narodowy: klasy powinny współpracować w imię interesu narodowego.</p></li>
+              <li><span>03</span><p>Pragmatyzm wobec zaborców: autonomia w Rosji, legalna praca, Duma; po 1914 orientacja na Ententę.</p></li>
+            </ol>
+          </div>
+
+          <blockquote class="quote reveal">
+            <p>„Jestem Polakiem, więc mam obowiązki polskie.”</p>
+            <cite>Roman Dmowski, <em>Myśli nowoczesnego Polaka</em>, 1903</cite>
+          </blockquote>
+
+          <div class="shadow-note shadow-note--critical reveal">
+            <span>Cień programu</span>
+            <p>
+              Antysemityzm, wykluczenie mniejszości i wizja „Polaka-katolika”
+              nie były marginesem endecji — były częścią jej polityki. Trzeba
+              nazwać to wprost, także dlatego że te idee wracały później.
+            </p>
+          </div>
+
+          <div class="shadow-note reveal">
+            <span>W cieniu</span>
+            <p>
+              W 1919 r. SND przekształca się w Związek Ludowo-Narodowy. Endecja
+              była jedną z najsilniejszych sił II RP, ale jej nacjonalizm budował
+              trwałe podziały. Dmowski reprezentował Polskę na konferencji
+              pokojowej w Paryżu.
+            </p>
+          </div>
+
+          <div class="leaders reveal">
+            <span class="mono-label">Ludzie</span>
+            <ul class="chips">
+              <li>Roman Dmowski</li>
+              <li>Zygmunt Balicki</li>
+              <li>Jan Ludwik Popławski</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================ SDKPiL ============================ -->
+    <section id="sdkpil" class="party party--sdkpil" data-chapter="07" data-title="SDKPiL">
+      <div class="wrap party__grid">
+        <div class="party__visual">
+          <div class="portrait reveal" data-reveal="fade">
+            <div class="portrait__frame">
+              <img src="assets/img/luksemburg.jpg" alt="Portret Róży Luksemburg">
+              <span class="portrait__wash" aria-hidden="true"></span>
+            </div>
+            <div class="portrait__stamp" aria-hidden="true">1893</div>
+          </div>
+          <p class="portrait__caption">
+            <strong>Róża Luksemburg</strong>
+            teoretyczka marksizmu, współzałożycielka SDKPiL
+          </p>
+          <p class="party__index">03 <span>/</span> 04</p>
+        </div>
+
+        <div class="party__content">
+          <p class="eyebrow">07 · Partia 03 / 04 · marksizm</p>
+          <h2 class="party__title reveal">SDKPiL</h2>
+          <p class="party__lead reveal">
+            Marksizm bez złudzeń wobec państwa narodowego. SDKPiL chciała
+            rewolucji, która zniesie kapitalizm i granice.
+          </p>
+
+          <div class="meta-grid reveal" data-reveal="fade">
+            <div><span>Rok</span><strong>1893 jako SDKP · 1900 SDKPiL</strong></div>
+            <div><span>Baza</span><strong>robotnicy przemysłowi</strong></div>
+            <div><span>Kolor</span><strong>ciemna czerwień</strong></div>
+            <div><span>Hasło</span><strong>rewolucja i internacjonalizm</strong></div>
+          </div>
+
+          <div class="program reveal">
+            <h3>Program w trzech punktach</h3>
+            <ol>
+              <li><span>01</span><p>Obalenie kapitalizmu i władza proletariatu — nie reforma, lecz rewolucja.</p></li>
+              <li><span>02</span><p>Internacjonalizm: solidarność robotników ponad granicami; sprzeciw wobec niepodległości jako celu.</p></li>
+              <li><span>03</span><p>Sojusz z ruchem robotniczym Rosji: od 1906 r. autonomiczna sekcja SDPRR.</p></li>
+            </ol>
+          </div>
+
+          <blockquote class="quote reveal">
+            <p>„Wolność to zawsze wolność dla tych, którzy myślą inaczej.”</p>
+            <cite>Róża Luksemburg, 1918 — o wolności krytyki</cite>
+          </blockquote>
+
+          <div class="shadow-note reveal">
+            <span>W cieniu</span>
+            <p>
+              Partia była mała i konspiracyjna; nie zbudowała trwałego zaplecza
+              chłopskiego. W grudniu 1918 r. wraz z PPS-Lewicą współtworzyła
+              Komunistyczną Partię Polski (KPRP). W II RP komuniści znaleźli się
+              praktycznie poza legalnym życiem politycznym.
+            </p>
+          </div>
+
+          <div class="leaders reveal">
+            <span class="mono-label">Ludzie</span>
+            <ul class="chips">
+              <li>Róża Luksemburg</li>
+              <li>Leo Jogiches</li>
+              <li>Julian Marchlewski</li>
+              <li>Adolf Warski</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================ PSL ============================ -->
+    <section id="psl" class="party party--psl" data-chapter="08" data-title="PSL">
+      <div class="wrap party__grid">
+        <div class="party__visual">
+          <div class="portrait reveal" data-reveal="fade">
+            <div class="portrait__frame">
+              <img src="assets/img/witos.jpg" alt="Portret Wincentego Witosa">
+              <span class="portrait__wash" aria-hidden="true"></span>
+            </div>
+            <div class="portrait__stamp" aria-hidden="true">1895</div>
+          </div>
+          <p class="portrait__caption">
+            <strong>Wincenty Witos</strong>
+            lider PSL Piast, trzykrotny premier II RP
+          </p>
+          <div class="portrait__secondary portrait__secondary--right reveal" data-reveal="scale">
+            <img src="assets/img/stapinski.jpg" alt="Portret Jana Stapińskiego">
+            <span>Jan Stapiński<br><small>PSL Lewica</small></span>
+          </div>
+          <p class="party__index">04 <span>/</span> 04</p>
+        </div>
+
+        <div class="party__content">
+          <p class="eyebrow">08 · Partia 04 / 04 · agraryzm</p>
+          <h2 class="party__title reveal">Polskie Stronnictwo Ludowe</h2>
+          <p class="party__lead reveal">
+            Chłopi przestają być tylko wyborcami elit. PSL chce ziemi, oświaty
+            i podmiotowości wsi — w państwie, które ma być także chłopskie.
+          </p>
+
+          <div class="meta-grid reveal" data-reveal="fade">
+            <div><span>Rok</span><strong>1895, Rzeszów</strong></div>
+            <div><span>Baza</span><strong>chłopi, inteligencja ludowa</strong></div>
+            <div><span>Kolor</span><strong>zieleń</strong></div>
+            <div><span>Hasło</span><strong>ziemia, oświata, samorząd</strong></div>
+          </div>
+
+          <div class="program reveal">
+            <h3>Program w trzech punktach</h3>
+            <ol>
+              <li><span>01</span><p>Ziemia dla chłopów, likwidacja przywilejów, reforma rolna.</p></li>
+              <li><span>02</span><p>Samorząd i oświata: wieś ma rządzić się sama i kształcić się.</p></li>
+              <li><span>03</span><p>Spółdzielczość i prawa wyborcze — masowy ruch ludowy, nie tylko elita.</p></li>
+            </ol>
+          </div>
+
+          <div class="idea-quote reveal">
+            <span class="idea-quote__label">Idea partii</span>
+            <p>Wieś ma być gospodarzem Polski, nie tylko zapleczem miasta.</p>
+          </div>
+
+          <div class="shadow-note reveal">
+            <span>W cieniu</span>
+            <p>
+              W 1913 r. PSL dzieli się na Piast (Witos, Bojko) i Lewicę (Stapiński).
+              W 1915 r. w Królestwie powstaje PSL Wyzwolenie. Po 1918 r. ruch ludowy
+              jest jednym z filarów II RP; Witos zostaje premierem. Różnice między
+              Piastem a Lewicą dotyczą tempa reform i sojuszy.
+            </p>
+          </div>
+
+          <div class="leaders reveal">
+            <span class="mono-label">Ludzie</span>
+            <ul class="chips">
+              <li>Wincenty Witos</li>
+              <li>Jakub Bojko</li>
+              <li>Jan Stapiński</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================ SPORY ============================ -->
+    <section id="spory" class="panel light" data-chapter="09" data-title="Spory">
+      <div class="wrap">
+        <header class="section-head">
+          <p class="eyebrow">09 · Spory</p>
+          <h2 class="reveal" data-split>Cztery spory, które przetrwały</h2>
+          <p class="lead reveal">
+            Partie nie różniły się tylko programami gospodarczymi. Spierały się
+            o to, czym jest wspólnota, kto ma prawo mówić w jej imieniu
+            i czy wolność trzeba najpierw wywalczyć, czy najpierw zbudować.
+          </p>
+        </header>
+
+        <div class="disputes">
+          <article class="dispute reveal">
+            <h3>Niepodległość czy rewolucja?</h3>
+            <div class="dispute__side dispute__side--a" style="--side: var(--red)">
+              <span class="tag">PPS</span>
+              <p>Najpierw wolna Polska. Socjalizm ma sens tylko w państwie, które istnieje.</p>
+            </div>
+            <div class="dispute__side dispute__side--b" style="--side: var(--deep-red)">
+              <span class="tag">SDKPiL</span>
+              <p>Państwo narodowe to część problemu. Rewolucja musi być międzynarodowa.</p>
+            </div>
+          </article>
+
+          <article class="dispute reveal">
+            <h3>Naród czy klasa?</h3>
+            <div class="dispute__side dispute__side--a" style="--side: var(--blue)">
+              <span class="tag">ND</span>
+              <p>Naród jest wspólnotą losu; klasy powinny współpracować.</p>
+            </div>
+            <div class="dispute__side dispute__side--b" style="--side: var(--red)">
+              <span class="tag">PPS / PSL</span>
+              <p>Naród bez robotników i chłopów to tylko elita. Polityka musi być ludowa.</p>
+            </div>
+          </article>
+
+          <article class="dispute reveal">
+            <h3>Reforma czy rewolucja?</h3>
+            <div class="dispute__side dispute__side--a" style="--side: var(--green)">
+              <span class="tag">PSL / ND / realiści</span>
+              <p>Praca organiczna, samorząd, edukacja, legalna droga.</p>
+            </div>
+            <div class="dispute__side dispute__side--b" style="--side: var(--deep-red)">
+              <span class="tag">SDKPiL</span>
+              <p>Kapitalizmu nie da się naprawić. Trzeba go obalić.</p>
+            </div>
+          </article>
+
+          <article class="dispute reveal">
+            <h3>Kto mówi za Polskę?</h3>
+            <div class="dispute__side dispute__side--a" style="--side: var(--blue)">
+              <span class="tag">Endecja</span>
+              <p>Wykształcone mieszczaństwo i inteligencja, zjednoczone wokół narodu.</p>
+            </div>
+            <div class="dispute__side dispute__side--b" style="--side: var(--green)">
+              <span class="tag">Ludowcy i socjaliści</span>
+              <p>Chłopi i robotnicy, przez własne partie i organizacje.</p>
+            </div>
+          </article>
+        </div>
+
+        <p class="fine-note reveal">
+          To uproszczenie. Partie zmieniały taktykę, zawierały sojusze i dzieliły się.
+          Granice między nurtami były płynne — dlatego historia polityki nie jest
+          historią czystych kategorii.
+        </p>
+      </div>
+    </section>
+
+    <!-- ============================ 1905 ============================ -->
+    <section id="rok1905" class="interlude" data-chapter="10" data-title="1905">
+      <div class="interlude__bg" data-parallax="0.08" aria-hidden="true"></div>
+      <div class="interlude__shade" aria-hidden="true"></div>
+      <div class="wrap interlude__inner">
+        <div class="interlude__copy">
+          <p class="eyebrow">10 · Próba generalna</p>
+          <h2 class="reveal">1905:<br>polityka wychodzi na ulice</h2>
+          <p class="interlude__lead reveal">
+            Rewolucja w Rosji dociera do Królestwa. Po raz pierwszy polityka
+            wychodzi z konspiracji na ulice — i pokazuje, że masy mogą zmusić
+            władzę do ustępstw.
+          </p>
+
+          <div class="interlude__facts" data-stagger>
+            <div>
+              <span>01</span>
+              <h3>Ulica</h3>
+              <p>Strajki, demonstracje, walki w Łodzi (czerwiec 1905), strajk szkolny.</p>
+            </div>
+            <div>
+              <span>02</span>
+              <h3>Jawność</h3>
+              <p>Prasa, związki, partie, Duma. Polityka zyskuje publiczność.</p>
+            </div>
+            <div>
+              <span>03</span>
+              <h3>Pęknięcia</h3>
+              <p>PPS dzieli się; SDKPiL stawia na rewolucję; endecja wybiera pracę parlamentarną.</p>
+            </div>
+          </div>
+
+          <p class="interlude__close reveal">Nie było zwycięstwa. Była zmiana reguł gry.</p>
+        </div>
+
+        <p class="interlude__caption">
+          Władysław Skoczylas, <em>Demonstracja uliczna 1905</em><br>
+          Muzeum Narodowe w Warszawie · Wikimedia Commons
+        </p>
+      </div>
+    </section>
+
+    <!-- ============================ POZA NURTEM ============================ -->
+    <section id="poza" class="panel dark" data-chapter="11" data-title="Poza nurtem">
+      <div class="wrap">
+        <header class="section-head section-head--wide">
+          <p class="eyebrow">11 · Poza czwórką</p>
+          <h2 class="reveal" data-split>Polityka była mozaiką</h2>
+          <p class="lead reveal">
+            Obok czterech głównych nurtów działały partie żydowskie, konserwatyści,
+            realiści i chadecy. „Poza głównym nurtem” nie znaczy „bez znaczenia”.
+          </p>
+        </header>
+
+        <div class="minor-grid" data-stagger>
+          <article class="minor-card">
+            <div class="minor-card__top">
+              <span class="mono-label">1897</span>
+              <span class="tag">socjalizm żydowski</span>
+            </div>
+            <h3>Bund</h3>
+            <p class="minor-card__sub">Powszechny Żydowski Związek Robotniczy</p>
+            <p>
+              Działał w Królestwie i na Litwie. Walczył o prawa robotników
+              żydowskich, język jidysz i autonomię kulturalno-narodową.
+            </p>
+            <div class="minor-card__tags"><span>Wilno</span><span>jidysz</span><span>autonomia kulturalna</span></div>
+          </article>
+
+          <article class="minor-card">
+            <div class="minor-card__top">
+              <span class="mono-label">1905</span>
+              <span class="tag">konserwatyzm</span>
+            </div>
+            <h3>Stronnictwo Polityki Realnej</h3>
+            <p class="minor-card__sub">realizm i ugoda</p>
+            <p>
+              Konserwatywno-liberalne ugrupowanie z Warszawy. Stawiało na legalną
+              pracę, autonomiczne reformy i współpracę z władzą zamiast powstań.
+            </p>
+            <div class="minor-card__tags"><span>Warszawa</span><span>legalizm</span><span>autonomia</span></div>
+          </article>
+
+          <article class="minor-card">
+            <div class="minor-card__top">
+              <span class="mono-label">1896 / 1919</span>
+              <span class="tag">chadecja</span>
+            </div>
+            <h3>Chrześcijańska demokracja</h3>
+            <p class="minor-card__sub">Stojałowski i chadecja</p>
+            <p>
+              Stronnictwo Chrześcijańsko-Ludowe ks. Stanisława Stojałowskiego
+              w Galicji; po 1919 r. Polskie Stronnictwo Chrześcijańskiej Demokracji.
+              Solidaryzm, religia, prawa ludu.
+            </p>
+            <div class="minor-card__tags"><span>Galicja</span><span>solidaryzm</span><span>Kościół</span></div>
+          </article>
+
+          <article class="minor-card">
+            <div class="minor-card__top">
+              <span class="mono-label">1860s—1918</span>
+              <span class="tag">konserwatyzm</span>
+            </div>
+            <h3>Konserwatyści galicyjscy</h3>
+            <p class="minor-card__sub">Stańczycy i Podolacy</p>
+            <p>
+              Arystokracja, ziemiaństwo i Kościół. Bronili własności, porządku
+              i autonomii Galicji; byli naturalnym sojusznikiem dworu
+              i konserwatywnej elity.
+            </p>
+            <div class="minor-card__tags"><span>Kraków</span><span>ziemiaństwo</span><span>autonomia</span></div>
+          </article>
+        </div>
+
+        <div class="minor-note reveal">
+          <p class="mono-label">Wniosek</p>
+          <p>
+            Nowoczesna polityka nie była tylko lewicowa. Prawica też się
+            modernizowała — przez prasę, organizacje, spółdzielnie i parlament.
+            Walka o Polskę odbywała się na wielu scenach jednocześnie.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================ BILANS ============================ -->
+    <section id="bilans" class="panel light" data-chapter="12" data-title="Bilans">
+      <div class="wrap">
+        <header class="section-head">
+          <p class="eyebrow">12 · Bilans</p>
+          <h2 class="reveal" data-split>Partie w pigułce</h2>
+          <p class="lead reveal">
+            Sześć ugrupowań, sześć odpowiedzi. Zestawienie pokazuje, że spór
+            o Polskę był także sporem o to, kto ma prawo do głosu.
+          </p>
+        </header>
+
+        <div class="table-wrap reveal">
+          <table class="compare-table">
+            <caption class="sr-only">Porównanie najważniejszych partii i ugrupowań na ziemiach polskich</caption>
+            <thead>
+              <tr>
+                <th scope="col">Partia</th>
+                <th scope="col">Rok</th>
+                <th scope="col">Ideologia</th>
+                <th scope="col">Baza</th>
+                <th scope="col">Niepodległość</th>
+                <th scope="col">Metody</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <th scope="row"><span class="row-party"><i class="dot" style="--dot: var(--red)"></i><span>PPS<small>Polska Partia Socjalistyczna</small></span></span></th>
+                <td data-label="Rok">1892</td>
+                <td data-label="Ideologia">socjalizm niepodległościowy</td>
+                <td data-label="Baza">robotnicy, inteligencja</td>
+                <td data-label="Niepodległość"><span class="stance stance--yes">tak</span></td>
+                <td data-label="Metody">konspiracja, legalna działalność w Galicji, walka zbrojna</td>
+              </tr>
+              <tr>
+                <th scope="row"><span class="row-party"><i class="dot" style="--dot: var(--blue)"></i><span>Endecja<small>Stronnictwo Narodowo-Demokratyczne</small></span></span></th>
+                <td data-label="Rok">1897</td>
+                <td data-label="Ideologia">nacjonalizm</td>
+                <td data-label="Baza">mieszczaństwo, inteligencja, ziemiaństwo</td>
+                <td data-label="Niepodległość"><span class="stance stance--maybe">autonomia → niepodległość</span></td>
+                <td data-label="Metody">praca legalna, prasa, Duma, dyplomacja</td>
+              </tr>
+              <tr>
+                <th scope="row"><span class="row-party"><i class="dot" style="--dot: var(--deep-red)"></i><span>SDKPiL<small>Socjaldemokracja Królestwa Polskiego i Litwy</small></span></span></th>
+                <td data-label="Rok">1893 / 1900</td>
+                <td data-label="Ideologia">marksizm internacjonalistyczny</td>
+                <td data-label="Baza">robotnicy przemysłowi</td>
+                <td data-label="Niepodległość"><span class="stance stance--no">nie — rewolucja</span></td>
+                <td data-label="Metody">konspiracja, strajki, propaganda</td>
+              </tr>
+              <tr>
+                <th scope="row"><span class="row-party"><i class="dot" style="--dot: var(--green)"></i><span>PSL<small>Polskie Stronnictwo Ludowe</small></span></span></th>
+                <td data-label="Rok">1895</td>
+                <td data-label="Ideologia">agraryzm</td>
+                <td data-label="Baza">chłopi, inteligencja ludowa</td>
+                <td data-label="Niepodległość"><span class="stance stance--yes">tak / autonomia</span></td>
+                <td data-label="Metody">legalna działalność w Galicji, wiece, spółdzielnie</td>
+              </tr>
+              <tr>
+                <th scope="row"><span class="row-party"><i class="dot" style="--dot: var(--violet)"></i><span>Chadecja<small>Chrześcijańska demokracja</small></span></span></th>
+                <td data-label="Rok">1896 / 1919</td>
+                <td data-label="Ideologia">chrześcijańska demokracja</td>
+                <td data-label="Baza">chłopi, robotnicy, katolicy</td>
+                <td data-label="Niepodległość"><span class="stance stance--yes">tak / autonomia</span></td>
+                <td data-label="Metody">legalna działalność, Kościół, samorząd</td>
+              </tr>
+              <tr>
+                <th scope="row"><span class="row-party"><i class="dot" style="--dot: var(--gold)"></i><span>Bund<small>Żydowski Związek Robotniczy</small></span></span></th>
+                <td data-label="Rok">1897</td>
+                <td data-label="Ideologia">socjalizm + autonomia kulturalna</td>
+                <td data-label="Baza">robotnicy żydowscy</td>
+                <td data-label="Niepodległość"><span class="stance stance--maybe">nie wprost</span></td>
+                <td data-label="Metody">konspiracja, działalność legalna</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div class="takeaways" data-stagger>
+          <article>
+            <span>01</span>
+            <h3>Nowe podmioty</h3>
+            <p>Robotnik, chłop, kobieta i mniejszość wchodzą do polityki. To zmienia język i skalę debaty.</p>
+          </article>
+          <article>
+            <span>02</span>
+            <h3>Spór o strategię</h3>
+            <p>Niepodległość, autonomia czy rewolucja — to były różne odpowiedzi na pytanie „jak?”, nie „czy?”.</p>
+          </article>
+          <article>
+            <span>03</span>
+            <h3>Infrastruktura społeczna</h3>
+            <p>Partie budują prasę, związki, spółdzielnie i szkoły. Polityka staje się codziennością, nie tylko świętem.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================ DZIEDZICTWO ============================ -->
+    <section id="dziedzictwo" class="panel legacy" data-chapter="13" data-title="1918">
+      <div class="legacy__glow" aria-hidden="true"></div>
+      <div class="wrap">
+        <div class="legacy__top">
+          <div class="legacy__year reveal" data-reveal="left">
+            <span>1918</span>
+            <small>koniec zaborów</small>
+          </div>
+          <div class="legacy__intro">
+            <p class="eyebrow">13 · Państwo wraca</p>
+            <h2 class="reveal" data-split>Spór nie kończy się. Zmienia miejsce.</h2>
+            <p class="lead reveal">
+              11 listopada 1918 r. kończy 123 lata zaborów. Partie, które rodziły
+              się w konspiracji i sporze, muszą teraz współtworzyć państwo.
+            </p>
+          </div>
+        </div>
+
+        <div class="milestones" data-stagger>
+          <article>
+            <span class="milestones__date">11 XI 1918</span>
+            <h3>Niepodległość</h3>
+            <p>Rada Regencyjna przekazuje władzę Piłsudskiemu. Powstaje państwo, o które spierały się wszystkie nurty.</p>
+          </article>
+          <article>
+            <span class="milestones__date">28 XI 1918</span>
+            <h3>Kobiety głosują</h3>
+            <p>Dekret o ordynacji wyborczej daje kobietom prawa wyborcze. W 1919 r. po raz pierwszy zasiadają w Sejmie.</p>
+          </article>
+          <article>
+            <span class="milestones__date">26 I 1919</span>
+            <h3>Pierwszy Sejm</h3>
+            <p>Wybory do Sejmu Ustawodawczego. Partie wchodzą do parlamentu; endecja i PSL są silne, PPS szuka miejsca w nowym układzie.</p>
+          </article>
+          <article>
+            <span class="milestones__date">1920</span>
+            <h3>Test państwa</h3>
+            <p>Wojna z bolszewikami. Witos zostaje premierem; koalicja musi działać pod presją kryzysu.</p>
+          </article>
+        </div>
+
+        <div class="legacy__closing">
+          <p class="legacy__question reveal">Jaka Polska wygrała w 1918 roku?</p>
+          <p class="legacy__answer reveal">
+            Żadna jedna. Wygrała idea państwa, w którym spór jest legalny —<br>
+            w prasie, w parlamencie i przy urnie.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================ FINAŁ ============================ -->
+    <section id="final" class="final" data-chapter="14" data-title="Finał">
+      <div class="final__bg" aria-hidden="true"></div>
+      <div class="wrap final__inner">
+        <p class="eyebrow">14 · Zakończenie</p>
+        <h2 class="final__title reveal">Dziękuję<br><em>za uwagę.</em></h2>
+        <p class="final__lead reveal">
+          Dziękuję za udział w prezentacji o nowych nurtach politycznych
+          na ziemiach polskich w latach 1890–1918.
+        </p>
+
+        <div class="final__actions">
+          <a class="btn btn--primary" href="#start">
+            Wróć na start
+            <span aria-hidden="true">↑</span>
+          </a>
+          <button class="btn btn--ghost" id="finalAuto" type="button">
+            <span class="btn__icon" aria-hidden="true">
+              <svg viewBox="0 0 16 16"><path d="M5 3.4v9.2L12 8 5 3.4Z" fill="currentColor"/></svg>
+            </span>
+            Autoscroll od nowa
+          </button>
+        </div>
+
+        <p class="final__thanks reveal">Tadeusz Stagraczyński<span>klasa 3a</span></p>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="wrap footer-grid">
+      <div class="footer-block">
+        <p class="mono-label">Źródła</p>
+        <ul class="source-list">
+          <li><a href="https://pl.wikipedia.org/wiki/Polska_Partia_Socjalistyczna" target="_blank" rel="noopener">PPS — Wikipedia</a></li>
+          <li><a href="https://pl.wikipedia.org/wiki/Stronnictwo_Narodowo-Demokratyczne" target="_blank" rel="noopener">SND / endecja — Wikipedia</a></li>
+          <li><a href="https://pl.wikipedia.org/wiki/Socjaldemokracja_Kr%C3%B3lestwa_Polskiego_i_Litwy" target="_blank" rel="noopener">SDKPiL — Wikipedia</a></li>
+          <li><a href="https://pl.wikipedia.org/wiki/Polskie_Stronnictwo_Ludowe_(1895%E2%80%931913)" target="_blank" rel="noopener">PSL (1895–1913) — Wikipedia</a></li>
+          <li><a href="https://pl.wikipedia.org/wiki/Polska_Partia_Socjalno-Demokratyczna_Galicji_i_%C5%9Al%C4%85ska_Cieszy%C5%84skiego" target="_blank" rel="noopener">PPSD — Wikipedia</a></li>
+          <li><a href="https://pl.wikipedia.org/wiki/Stronnictwo_Chrze%C5%9Bcija%C5%84sko-Ludowe" target="_blank" rel="noopener">Stronnictwo Chrześcijańsko-Ludowe — Wikipedia</a></li>
+          <li><a href="https://www.vatican.va/content/leo-xiii/en/encyclicals/documents/hf_l-xiii_enc_15051891_rerum-novarum.html" target="_blank" rel="noopener">Leon XIII, Rerum Novarum (1891)</a></li>
+          <li><a href="https://pl.wikisource.org/wiki/My%C5%9Bli_nowoczesnego_Polaka" target="_blank" rel="noopener">R. Dmowski, Myśli nowoczesnego Polaka (1903)</a></li>
+          <li>A. Chwalba, <em>Historia Polski 1795–1918</em> — lektura uzupełniająca</li>
+        </ul>
+      </div>
+
+      <div class="footer-block">
+        <p class="mono-label">Obrazy i credits</p>
+        <p>
+          Portrety: Józef Piłsudski, Roman Dmowski, Róża Luksemburg, Wincenty Witos,
+          Ignacy Daszyński, Jan Stapiński — Wikimedia Commons, domena publiczna.
+        </p>
+        <p>
+          Tło mapy: Halibutt / ElCet, <em>Rzeczpospolita Rozbiory</em>, Wikimedia Commons,
+          GFDL / CC BY-SA. Obraz: Władysław Skoczylas, <em>Demonstracja uliczna 1905</em>,
+          Muzeum Narodowe w Warszawie, domena publiczna. Warszawa ok. 1900 — Photochrom,
+          Library of Congress / Wikimedia Commons, domena publiczna.
+        </p>
+        <p class="footer-small">
+          Fonty: Cormorant Garamond, Manrope, IBM Plex Mono — SIL Open Font License.
+        </p>
+      </div>
+
+      <div class="footer-block">
+        <p class="mono-label">Sterowanie</p>
+        <p>
+          <kbd>A</kbd> autoscroll · <kbd>F</kbd> pełny ekran · <kbd>Esc</kbd> stop.
+          Suwak postępu u góry, nawigacja po prawej.
+        </p>
+        <p class="footer-small">
+          Prezentacja edukacyjna. Daty i programy partii podano w uproszczeniu;
+          partie zmieniały stanowiska, a granice między nurtami były płynne.
+        </p>
+        <p class="footer-small">
+          Opracowanie: Tadeusz Stagraczyński · klasa 3a
+        </p>
+      </div>
+    </div>
+
+    <div class="wrap footer-bottom">
+      <span>Nowe nurty polityczne · ziemie polskie 1890–1918</span>
+      <a href="#start">↑ Na początek</a>
+    </div>
+  </footer>
+
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+  <script src="js/app.js"></script>
+</body>
+</html>
