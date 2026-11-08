@@ -4,11 +4,25 @@
 
 Jednostronicowa prezentacja historyczna w HTML, CSS i JavaScript. Zawiera autoscroll, animacje budujące się przy przewijaniu, kalendarium, dossier czterech partii, planszę porównawczą i źródła.
 
+**Wersja online:** [szybks.github.io/TS_prezentacja_na_historie_mk_3a](https://szybks.github.io/TS_prezentacja_na_historie_mk_3a/)
+
+**Repozytorium:** [github.com/Szybks/TS_prezentacja_na_historie_mk_3a](https://github.com/Szybks/TS_prezentacja_na_historie_mk_3a)
+
+**Wersja z wymuszonymi animacjami:** [szybks.github.io/TS_prezentacja_na_historie_mk_3a/?anim=1](https://szybks.github.io/TS_prezentacja_na_historie_mk_3a/?anim=1)
+
 ---
 
 ## Jak otworzyć
 
-### Najprościej
+### Online
+
+Otwórz:
+
+```text
+https://szybks.github.io/TS_prezentacja_na_historie_mk_3a/
+```
+
+### Najprościej lokalnie
 
 Kliknij dwukrotnie **`index.html`**.
 
@@ -59,29 +73,30 @@ Autoscroll przewija stronę ze stałą prędkością. Po dojściu do końca zatr
 
 ## Publikacja na GitHub Pages
 
+Repozytorium jest już opublikowane i podłączone do GitHub Pages:
+
+- **Repo:** https://github.com/Szybks/TS_prezentacja_na_historie_mk_3a
+- **Strona:** https://szybks.github.io/TS_prezentacja_na_historie_mk_3a/
+- **Animacje wymuszone:** https://szybks.github.io/TS_prezentacja_na_historie_mk_3a/?anim=1
+- **Gałąź:** `main`, folder `/ (root)`
+
+### Aktualizacja strony
+
+Po każdej zmianie wystarczy:
+
+```powershell
+git add -A
+git commit -m "Aktualizacja prezentacji"
+git push origin main
+```
+
+GitHub Pages przebuduje stronę automatycznie (zwykle kilkanaście–kilkadziesiąt sekund).
+
 Prezentacja jest w pełni statyczna — GitHub Pages nie potrzebuje Pythona ani `uruchom.cmd`. Wystarczy `index.html` i pliki obok.
-
-1. Utwórz na GitHubie **publiczne** repozytorium, np. `nowe-nurty-polityczne` (GitHub Pages na darmowym koncie wymaga repozytorium publicznego).
-2. Wgraj zawartość tego folderu na branch `main`.
-3. W repozytorium wejdź w **Settings → Pages**.
-4. W sekcji **Build and deployment** wybierz **Deploy from a branch**.
-5. Ustaw branch **`main`** i folder **`/ (root)`**, zapisz.
-
-Strona będzie dostępna pod adresem:
-
-```text
-https://TWOJA-NAZWA.github.io/nowe-nurty-polityczne/
-```
-
-Wersja z wymuszonymi animacjami:
-
-```text
-https://TWOJA-NAZWA.github.io/nowe-nurty-polityczne/?anim=1
-```
 
 > **`uruchom.cmd` nie przeszkadza na GitHubie.** To tylko lokalny skrót do serwera na Twoim komputerze. GitHub Pages publikuje `index.html` i pliki statyczne; plik `.cmd` nie jest tam uruchamiany i nie wpływa na działanie strony.
 
-Plik `.nojekyll` jest już dodany, więc GitHub Pages nie będzie próbował przetwarzać projektu przez Jekyll.
+Plik `.nojekyll` jest dodany, więc GitHub Pages nie przetwarza projektu przez Jekyll. Strona ma też `robots.txt` i `noindex`, więc nie powinna pojawiać się w wynikach wyszukiwania.
 
 ---
 
