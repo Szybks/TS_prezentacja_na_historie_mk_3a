@@ -101,20 +101,13 @@ Plik `.nojekyll` jest dodany, więc GitHub Pages nie przetwarza projektu przez J
 
 ---
 
-## Personalizacja
 
 ### Imię i nazwisko
 
-**Tadeusz Stagraczyński, klasa 3a** (stopka i finał)
+**Tadeusz Stagraczyński, klasa 3a**
 
-```html
+```html css js
 Opracowanie: Tadeusz Stagraczyński · klasa 3a
-```
-
-oraz w finale:
-
-```html
-<p class="final__thanks reveal">Tadeusz Stagraczyński<span>klasa 3a</span></p>
 ```
 
 ### Prędkość autoscrolla
