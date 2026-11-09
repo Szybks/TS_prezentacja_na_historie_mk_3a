@@ -105,7 +105,7 @@ Plik `.nojekyll` jest dodany, więc GitHub Pages nie przetwarza projektu przez J
 
 ### Imię i nazwisko
 
-Dane są już wpisane: **Tadeusz Stagraczyński, klasa 3a** (stopka i finał). Aby je zmienić, w `index.html` wyszukaj:
+**Tadeusz Stagraczyński, klasa 3a** (stopka i finał)
 
 ```html
 Opracowanie: Tadeusz Stagraczyński · klasa 3a
